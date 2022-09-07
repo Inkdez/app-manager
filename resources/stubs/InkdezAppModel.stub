@@ -1,0 +1,12 @@
+<?php
+
+namespace namespaceName;
+
+use Jenssegers\Mongodb\Eloquent\Model;
+
+class className extends Model
+{
+    protected $guarded = ['_id'];
+    protected $connection = 'mongodb';
+    protected $collection = 'collectionName';
+}

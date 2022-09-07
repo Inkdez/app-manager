@@ -4,12 +4,7 @@ namespace Inkdez\AppManager;
 
 use Inkdez\AppManager\Traits\InkdezAppTrait;
 
-class InkdezApp implements InkdezAppInterface
+class InkdezApp
 {
     use InkdezAppTrait;
-
-    public function index(): string {
-        return "Test facade";
-    }
-
 }
