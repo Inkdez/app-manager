@@ -1,9 +1,15 @@
 <?php
 
-use Illuminate\Filesystem\Filesystem;
+namespace Inkdez\AppManager;
 
+use Inkdez\AppManager\Traits\InkdezAppTrait;
 
-class InkdezApp
+class InkdezApp implements InkdezAppInterface
 {
+    use InkdezAppTrait;
+
+    public function index(): string {
+        return "Test facade";
+    }
 
 }

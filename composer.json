@@ -21,6 +21,7 @@
             "email": "inkomomutane@github.com"
         }
     ],
+
     "minimum-stability": "dev",
     "require": {
         "illuminate/support": "9.x",
