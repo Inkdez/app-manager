@@ -1,0 +1,30 @@
+{
+    "name": "inkdez/app-manager",
+    "description": "App manager for dynamic Collection on Inkdez sibcdc app",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Inkdez\\AppManager\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Inkdez\\AppManager\\InkdezAppServiceProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "Nelson Alexandre Mutane",
+            "email": "inkomomutane@github.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "illuminate/support": "9.x",
+        "illuminate/filesystem": "9.x",
+        "jenssegers/mongodb": "^3.9"
+    }
+}
