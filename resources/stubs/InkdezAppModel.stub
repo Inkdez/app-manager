@@ -4,9 +4,14 @@ namespace namespaceName;
 
 use Jenssegers\Mongodb\Eloquent\Model;
 
-class className extends Model
+class TableName extends Model
 {
+
+    #Start
+
     protected $guarded = ['_id'];
     protected $connection = 'mongodb';
-    protected $collection = 'collectionName';
+    protected $collection = 'companyName_appName_collectionNames';
+
+    #End
 }

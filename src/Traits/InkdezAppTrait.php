@@ -3,6 +3,7 @@
 namespace Inkdez\AppManager\Traits;
 
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 /**
@@ -17,34 +18,33 @@ trait InkdezAppTrait
      * @param String $appName
      * @return bool
      */
-    public function makeApp(String $appName): bool
+    public function makeApp(String $companyName,String $appName): bool
     {
-        $isDirectory = File::isDirectory("core/Apps/${appName}");
-        if (!$isDirectory) {
-            return  File::makeDirectory(
-                path: base_path("core/Apps/${appName}"),
-                recursive: true
-            );
-        }
+        $isDirectory = File::isDirectory(storage_path("Apps/${companyName}/${appName}"));
+        if (!$isDirectory) { return Storage::makeDirectory("Apps/${companyName}/${appName}");}
         return $isDirectory;
     }
 
     /**
      * Create App table
      */
-    public function createTable(String $appName,String $tableName): bool
+    public function createTable(String $companyName,String $appName,?String $tableName = null): bool
     {
-        $fileContent =  file_get_contents(__DIR__ .'/../../resources/stubs/InkdezAppModel.stub');
-        $fileContent =  Str::replace("className","${tableName}",$fileContent);
-        $fileContent =  Str::replace("collectionName",(Str::lower($tableName) ."s"),$fileContent);
-        $file =  Str::replace("namespaceName",("Core\\Apps\\". Str::ucfirst($appName)),$fileContent);
+        $fileContent =  file_get_contents(__DIR__ . '/../../resources/stubs/InkdezAppModel.stub');
 
+        $fileContent =
+        Str::replace("namespaceName", ("Core\\Apps\\" .Str::ucfirst($companyName) .
+        "\\".Str::ucfirst($appName)) , $fileContent);
+        $fileContent = Str::replace("appName", Str::lower($appName), $fileContent);
+        $fileContent = Str::replace("companyName", Str::lower($companyName), $fileContent);
+        $fileContent = Str::replace("TableName", Str::ucfirst($tableName), $fileContent);
 
-        if (!File::exists(base_path("core/Apps/${appName}/${tableName}.php"))){
-            fopen(base_path("core/Apps/${appName}/${tableName}.php"),'x+');
-        }
-        File::put(base_path("core/Apps/${appName}/${tableName}.php"),$file);
+        $file =  Str::replace("collectionName", Str::lower($tableName), $fileContent);
 
-        return true;
+        if (!File::exists(storage_path("app/Apps/${companyName}/${appName}/${tableName}.php"))) fopen(storage_path("app/Apps/${companyName}/${appName}/${tableName}.php"), 'x+');
+
+        
+
+        return  Storage::put("Apps/${companyName}/${appName}/${tableName}.php", $file);
     }
 }
