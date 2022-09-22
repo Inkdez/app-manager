@@ -7,8 +7,6 @@ use Illuminate\Support\Str as SupportStr;
 class Str extends SupportStr
 {
 
-
-
     private function seems_utf8($str)
     {
         $length = strlen($str);
@@ -168,4 +166,9 @@ class Str extends SupportStr
 
         return $string;
     }
+
+    public function camelImplodedStr($str){
+        return $this->diactric($this->ucfirst($this->camel($this->lower($str))));
+    }
+
 }

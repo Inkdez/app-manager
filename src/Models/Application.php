@@ -2,9 +2,11 @@
 
 namespace Inkdez\AppManager\Models;
 
+use App\Models\User;
 use Database\Factories\AppFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Inkdez\AppManager\Support\Traits\Uuid;
 use Spatie\MediaLibrary\HasMedia;
@@ -21,11 +23,12 @@ class Application extends Model implements HasMedia
         'handle',
         'description',
         'version',
-        'custome_attributes'
+        'custome_attributes',
+        'user_id'
     ];
 
     protected $casts = [
-        'custume_attributes' => 'json'
+        'custome_attributes' => 'json'
     ];
 
     /**
@@ -36,6 +39,11 @@ class Application extends Model implements HasMedia
     public function collections(): HasMany
     {
         return $this->hasMany(Collection::class);
+    }
+
+    public function company(): BelongsTo
+    {
+        return $this->belongsTo(User::class,'user_id');
     }
 
 

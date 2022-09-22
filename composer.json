@@ -8,6 +8,11 @@
             "Inkdez\\AppManager\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
@@ -29,10 +34,13 @@
         "jenssegers/mongodb": "^3.9"
     },
     "require-dev": {
-        "pestphp/pest": "dev-master",
+        "phpunit/phpunit": "10.0.x-dev",
         "thedoctor0/laravel-factory-generator": "dev-master"
     },
     "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true
         }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f3e105001f615c1c77b36b453f0e7690",
+    "content-hash": "56bec06b84508079d4387e37405f2b38",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -2531,77 +2531,6 @@
             "time": "2022-07-27T22:33:50+00:00"
         },
         {
-            "name": "filp/whoops",
-            "version": "2.14.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/filp/whoops.git",
-                "reference": "a63e5e8f26ebbebf8ed3c5c691637325512eb0dc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/a63e5e8f26ebbebf8ed3c5c691637325512eb0dc",
-                "reference": "a63e5e8f26ebbebf8ed3c5c691637325512eb0dc",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.5.9 || ^7.0 || ^8.0",
-                "psr/log": "^1.0.1 || ^2.0 || ^3.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "^0.9 || ^1.0",
-                "phpunit/phpunit": "^4.8.36 || ^5.7.27 || ^6.5.14 || ^7.5.20 || ^8.5.8 || ^9.3.3",
-                "symfony/var-dumper": "^2.6 || ^3.0 || ^4.0 || ^5.0"
-            },
-            "suggest": {
-                "symfony/var-dumper": "Pretty print complex values better with var-dumper available",
-                "whoops/soap": "Formats errors as SOAP responses"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.7-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Whoops\\": "src/Whoops/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Filipe Dobreira",
-                    "homepage": "https://github.com/filp",
-                    "role": "Developer"
-                }
-            ],
-            "description": "php error handling for cool kids",
-            "homepage": "https://filp.github.io/whoops/",
-            "keywords": [
-                "error",
-                "exception",
-                "handling",
-                "library",
-                "throwable",
-                "whoops"
-            ],
-            "support": {
-                "issues": "https://github.com/filp/whoops/issues",
-                "source": "https://github.com/filp/whoops/tree/2.14.5"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/denis-sokolov",
-                    "type": "github"
-                }
-            ],
-            "time": "2022-01-07T12:00:00+00:00"
-        },
-        {
             "name": "illuminate/console",
             "version": "9.x-dev",
             "source": {
@@ -2834,97 +2763,6 @@
             "time": "2022-09-10T20:41:13+00:00"
         },
         {
-            "name": "nunomaduro/collision",
-            "version": "dev-next",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nunomaduro/collision.git",
-                "reference": "3cdf3acc0608e1469e16f818359f833d48b91f77"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/collision/zipball/3cdf3acc0608e1469e16f818359f833d48b91f77",
-                "reference": "3cdf3acc0608e1469e16f818359f833d48b91f77",
-                "shasum": ""
-            },
-            "require": {
-                "filp/whoops": "^2.14.5",
-                "nunomaduro/termwind": "^1.14",
-                "php": "^8.1.0",
-                "symfony/console": "^6.2.0"
-            },
-            "require-dev": {
-                "laravel/framework": "^9.30.1",
-                "laravel/pint": "^1.2",
-                "nunomaduro/larastan": "^2.2.0",
-                "orchestra/testbench": "^7.7",
-                "pestphp/pest": "dev-master",
-                "phpunit/phpunit": "dev-main as 9.5.24",
-                "spatie/ignition": "^1.4.1"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-develop": "6.x-dev"
-                },
-                "laravel": {
-                    "providers": [
-                        "NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "files": [
-                    "./src/Adapters/Phpunit/Autoload.php"
-                ],
-                "psr-4": {
-                    "NunoMaduro\\Collision\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nuno Maduro",
-                    "email": "enunomaduro@gmail.com"
-                }
-            ],
-            "description": "Cli error handling for console/command-line PHP applications.",
-            "keywords": [
-                "artisan",
-                "cli",
-                "command-line",
-                "console",
-                "error",
-                "handling",
-                "laravel",
-                "laravel-zero",
-                "php",
-                "symfony"
-            ],
-            "support": {
-                "issues": "https://github.com/nunomaduro/collision/issues",
-                "source": "https://github.com/nunomaduro/collision"
-            },
-            "funding": [
-                {
-                    "url": "https://www.paypal.com/paypalme/enunomaduro",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/nunomaduro",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/nunomaduro",
-                    "type": "patreon"
-                }
-            ],
-            "time": "2022-09-16T18:34:51+00:00"
-        },
-        {
             "name": "nunomaduro/termwind",
             "version": "v1.14.0",
             "source": {
@@ -3009,206 +2847,6 @@
                 }
             ],
             "time": "2022-08-01T11:03:24+00:00"
-        },
-        {
-            "name": "pestphp/pest",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pestphp/pest.git",
-                "reference": "9b54b61e2ea3f14ae4223d837e658c7962d38863"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pestphp/pest/zipball/9b54b61e2ea3f14ae4223d837e658c7962d38863",
-                "reference": "9b54b61e2ea3f14ae4223d837e658c7962d38863",
-                "shasum": ""
-            },
-            "require": {
-                "nunomaduro/collision": "dev-next",
-                "nunomaduro/termwind": "^1.14",
-                "pestphp/pest-plugin": "dev-master",
-                "php": "^8.1.0",
-                "phpunit/phpunit": "10.0.x-dev"
-            },
-            "require-dev": {
-                "ergebnis/phpstan-rules": "^1.0.0",
-                "illuminate/console": "^9.30.1",
-                "illuminate/support": "^9.30.1",
-                "laravel/dusk": "^7.0.1",
-                "laravel/pint": "^1.2.0",
-                "phpstan/phpstan": "^1.8.5",
-                "phpstan/phpstan-strict-rules": "^1.4.3",
-                "symfony/var-dumper": "^6.2.0",
-                "thecodingmachine/phpstan-strict-rules": "^1.0.0"
-            },
-            "default-branch": true,
-            "bin": [
-                "bin/pest"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-next": "2.x-dev"
-                },
-                "pest": {
-                    "plugins": [
-                        "Pest\\Plugins\\Coverage",
-                        "Pest\\Plugins\\Init",
-                        "Pest\\Plugins\\Environment",
-                        "Pest\\Plugins\\Help",
-                        "Pest\\Plugins\\Memory",
-                        "Pest\\Plugins\\Printer",
-                        "Pest\\Plugins\\Retry",
-                        "Pest\\Plugins\\Version"
-                    ]
-                },
-                "laravel": {
-                    "providers": [
-                        "Pest\\Laravel\\PestServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "files": [
-                    "overrides/Runner/Filter/NameFilterIterator.php",
-                    "overrides/Runner/TestSuiteLoader.php",
-                    "src/Functions.php",
-                    "src/Pest.php"
-                ],
-                "psr-4": {
-                    "Pest\\": "src/"
-                },
-                "exclude-from-classmap": [
-                    "../phpunit/phpunit/src/Runner/Filter/NameFilterIterator.php",
-                    "vendor/phpunit/phpunit/src/Runner/Filter/NameFilterIterator.php",
-                    "../phpunit/src/Runner/TestSuiteLoader.php",
-                    "vendor/phpunit/phpunit/src/Runner/TestSuiteLoader.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nuno Maduro",
-                    "email": "enunomaduro@gmail.com"
-                }
-            ],
-            "description": "An elegant PHP Testing Framework.",
-            "keywords": [
-                "framework",
-                "pest",
-                "php",
-                "test",
-                "testing",
-                "unit"
-            ],
-            "support": {
-                "issues": "https://github.com/pestphp/pest/issues",
-                "source": "https://github.com/pestphp/pest/tree/master"
-            },
-            "funding": [
-                {
-                    "url": "https://www.paypal.com/paypalme/enunomaduro",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/lukeraymonddowning",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/nunomaduro",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/olivernybroe",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/owenvoke",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/nunomaduro",
-                    "type": "patreon"
-                }
-            ],
-            "time": "2022-09-18T12:43:51+00:00"
-        },
-        {
-            "name": "pestphp/pest-plugin",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pestphp/pest-plugin.git",
-                "reference": "94f6d46a18ff0b735fe2973cb343dd682bfc33b7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pestphp/pest-plugin/zipball/94f6d46a18ff0b735fe2973cb343dd682bfc33b7",
-                "reference": "94f6d46a18ff0b735fe2973cb343dd682bfc33b7",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.1 || ^2.0",
-                "php": "^7.3 || ^8.0"
-            },
-            "conflict": {
-                "pestphp/pest": "<1.0"
-            },
-            "require-dev": {
-                "composer/composer": "^2.4.2",
-                "pestphp/pest": "^1.22.1",
-                "pestphp/pest-dev-tools": "^1.0.0"
-            },
-            "default-branch": true,
-            "type": "composer-plugin",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                },
-                "class": "Pest\\Plugin\\Manager"
-            },
-            "autoload": {
-                "psr-4": {
-                    "Pest\\Plugin\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "The Pest plugin manager",
-            "keywords": [
-                "framework",
-                "manager",
-                "pest",
-                "php",
-                "plugin",
-                "test",
-                "testing",
-                "unit"
-            ],
-            "support": {
-                "source": "https://github.com/pestphp/pest-plugin/tree/master"
-            },
-            "funding": [
-                {
-                    "url": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=66BYDWAT92N6L",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/nunomaduro",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/nunomaduro",
-                    "type": "patreon"
-                }
-            ],
-            "time": "2022-09-18T13:16:37+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -3658,12 +3296,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "76bbb367dffdf3fdc8c86abc8e1ae8f1b624bc40"
+                "reference": "bd3ada37140d7cd5b3b2f64338c181c9b6042703"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/76bbb367dffdf3fdc8c86abc8e1ae8f1b624bc40",
-                "reference": "76bbb367dffdf3fdc8c86abc8e1ae8f1b624bc40",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/bd3ada37140d7cd5b3b2f64338c181c9b6042703",
+                "reference": "bd3ada37140d7cd5b3b2f64338c181c9b6042703",
                 "shasum": ""
             },
             "require": {
@@ -3750,7 +3388,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-09-19T15:48:16+00:00"
+            "time": "2022-09-22T07:41:13+00:00"
         },
         {
             "name": "psr/cache",
@@ -4957,7 +4595,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "pestphp/pest": 20,
+        "phpunit/phpunit": 20,
         "thedoctor0/laravel-factory-generator": 20
     },
     "prefer-stable": false,

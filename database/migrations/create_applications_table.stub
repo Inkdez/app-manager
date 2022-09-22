@@ -20,7 +20,9 @@ class CreateApplicationsTable extends Migration
             $table->text('description')->nullable();
             $table->string('version')->nullable();
             $table->json('custome_attributes');
+            $table->bigInteger('user_id')->references('id')->on('users');
             $table->primary('id');
+
             $table->timestamps();
         });
     }
