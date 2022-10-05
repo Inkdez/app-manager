@@ -1,6 +1,6 @@
 <?php
-
 namespace Inkdez\AppManager\Models;
+
 
 use App\Models\User;
 use Database\Factories\AppFactory;
@@ -8,19 +8,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Inkdez\AppManager\Support\Traits\Uuid;
+use Inkdez\AppManager\Support\Traits\HasUuid;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
 class Application extends Model implements HasMedia
 {
-    use Uuid, InteractsWithMedia, HasFactory;
+    use HasUuid, InteractsWithMedia, HasFactory;
 
     protected $connection = 'mysql';
 
     protected $fillable = [
-        'namespace',
-        'handle',
+        'short_desc',
+        'name',
         'description',
         'version',
         'custome_attributes',
@@ -28,7 +28,7 @@ class Application extends Model implements HasMedia
     ];
 
     protected $casts = [
-        'custome_attributes' => 'json'
+        'custome_attributes' => 'array'
     ];
 
     /**

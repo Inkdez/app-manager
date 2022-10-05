@@ -15,11 +15,11 @@ class CreateApplicationsTable extends Migration
     {
         Schema::create('applications', function (Blueprint $table) {
             $table->uuid('id');
-            $table->string('namespace');
-            $table->string('handle');
+            $table->string('short_desc')->nullable();
+            $table->string('name')->nullable();
             $table->text('description')->nullable();
             $table->string('version')->nullable();
-            $table->json('custome_attributes');
+            $table->json('custome_attributes')->nullable();
             $table->bigInteger('user_id')->references('id')->on('users');
             $table->primary('id');
 

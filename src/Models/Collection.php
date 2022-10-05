@@ -6,16 +6,23 @@ use Database\Factories\CollectionFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Inkdez\AppManager\Support\Traits\Uuid;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Inkdez\AppManager\Support\Traits\HasUuid;
 
 class Collection extends Model
 {
-    use Uuid,HasFactory;
+    use HasUuid,HasFactory;
 
     protected $connection = "mysql";
+
+    protected $casts = [
+        'settings' => 'array'
+    ];
+
     protected $fillable = [
         'application_id',
-        'handle',
+        'name',
+        'settings'
     ];
 
     /**
@@ -31,6 +38,16 @@ class Collection extends Model
     protected static function newFactory()
     {
         return CollectionFactory::new();
+    }
+
+    /**
+     * Get all of the entries for the Collection
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function entries(): HasMany
+    {
+        return $this->hasMany(Entry::class);
     }
 
 }

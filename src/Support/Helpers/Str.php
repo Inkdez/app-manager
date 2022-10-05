@@ -4,7 +4,7 @@ namespace Inkdez\AppManager\Support\Helpers;
 
 use Illuminate\Support\Str as SupportStr;
 
-class Str extends SupportStr
+final class Str extends SupportStr
 {
 
     private function seems_utf8($str)
@@ -35,12 +35,12 @@ class Str extends SupportStr
      * @param string $string Text that might have accent characters
      * @return string Filtered string with replaced "nice" characters.
      */
-    public function diactric($string)
+    public static function diactric($string)
     {
         if (!preg_match('/[\x80-\xff]/', $string))
             return $string;
 
-        if ($this->seems_utf8($string)) {
+        if (Str::seems_utf8($string)) {
             $chars = array(
                 // Decompositions for Latin-1 Supplement
                 chr(195) . chr(128) => 'A', chr(195) . chr(129) => 'A',
@@ -167,8 +167,8 @@ class Str extends SupportStr
         return $string;
     }
 
-    public function camelImplodedStr($str){
-        return $this->diactric($this->ucfirst($this->camel($this->lower($str))));
+    public static function camelImplodedStr($str){
+        return Str::diactric(Str::ucfirst(Str::camel(Str::lower($str))));
     }
 
 }

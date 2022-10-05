@@ -19,10 +19,13 @@ class InkdezAppServiceProvider extends ServiceProvider
     if ($this->app->runningInConsole()) {
         $this->publishes([
             __DIR__ . '/../database/migrations/create_applications_table.stub' =>
-             database_path('migrations/' . date('Y_m_d_His', time()) . '_create_applications_table.php'),
+             database_path('migrations/' . '2022_10_5_1449' . '_create_applications_table.php'),
 
              __DIR__ . '/../database/migrations/create_collections_table.stub' =>
-             database_path('migrations/' . date('Y_m_d_His', time()) . '_create_collections_table.php'),
+             database_path('migrations/' . '2022_10_5_1449' . '_create_collections_table.php'),
+
+             __DIR__ . '/../database/migrations/create_entries_table.stub' =>
+             database_path('migrations/' . '2022_10_5_1449' . '_create_entries_table.php'),
 
           ], 'migrations');
       }
