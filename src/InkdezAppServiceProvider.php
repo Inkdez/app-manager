@@ -2,18 +2,27 @@
 
 namespace Inkdez\AppManager;
 
-
 use Illuminate\Support\ServiceProvider;
+use Inkdez\AppManager\Support\FieldTypes\MultipleSelectField;
+use Inkdez\AppManager\Support\FieldTypes\SingleSelectField;
+use Inkdez\AppManager\Support\FieldTypes\TextField;
+
 
 class InkdezAppServiceProvider extends ServiceProvider
 {
   public function register()
   {
-    // $this->app->bind('InkdezApp',function($app){
-    //     return new InkdezApp();
-    // });
-  }
+    $loader = \Illuminate\Foundation\AliasLoader::getInstance();
 
+    $this->app->bind('TextField',function(){return new TextField();});
+    $this->app->bind('SingleSelectField',function(){return new SingleSelectField();});
+    $this->app->bind('MultipleSelectField',function(){return new MultipleSelectField();});
+
+
+    $loader->alias("InkdezTextField","Inkdez\\AppManager\\Support\\Facades\\TextFieldFacade");
+    $loader->alias("InkdezSingleSelectField","Inkdez\\AppManager\\Support\\Facades\\SingleSelectFieldFacade");
+    $loader->alias("InkdezMultipleSelectField","Inkdez\\AppManager\\Support\\Facades\\MultipleSelectFieldFacade");
+}
   public function boot()
   {
     if ($this->app->runningInConsole()) {
@@ -30,5 +39,4 @@ class InkdezAppServiceProvider extends ServiceProvider
           ], 'migrations');
       }
   }
-
 }

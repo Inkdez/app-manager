@@ -17,6 +17,7 @@ class CreateCollectionsTable extends Migration
             $table->uuid('id');
             $table->string('name')->nullable();
             $table->uuid('application_id');
+            $table->json('settings')->nullable();
             $table->foreign('application_id')->references('id')->on('applications');
             $table->primary('id');
             $table->timestamps();

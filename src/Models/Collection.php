@@ -2,7 +2,11 @@
 
 namespace Inkdez\AppManager\Models;
 
+use App\Casts\Field as FieldCast;
+
 use Database\Factories\CollectionFactory;
+use Illuminate\Database\Eloquent\Casts\AsCollection;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -16,14 +20,17 @@ class Collection extends Model
     protected $connection = "mysql";
 
     protected $casts = [
-        'settings' => 'array'
+        'settings' => 'json',
     ];
+    protected $appends = ['parsed_settings'];
 
     protected $fillable = [
         'application_id',
         'name',
-        'settings'
+        'settings',
     ];
+
+
 
     /**
      * Get the user that owns the Collection
@@ -48,6 +55,14 @@ class Collection extends Model
     public function entries(): HasMany
     {
         return $this->hasMany(Entry::class);
+    }
+
+
+    public function getParsedSettingsAttribute()
+    {
+        return (new FieldCast())->get($this,'settings',$this->settings,[
+            'settings'
+        ]);
     }
 
 }
